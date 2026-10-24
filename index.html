@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إلى أمي الحبيبة - Mama Asmaa ❤️</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cairo:wght@400;600;700;800&family=Great+Vibes&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- ربط ملف الـ CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Canvas للورد والقلوب المتحركة -->
+  <canvas id="fx-canvas"></canvas>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="mother-tag">
+        <i class="fa-solid fa-crown"></i> أمي الحبيبة ونور عيني
+      </div>
+      <h1 class="main-title">Mama Asmaa</h1>
+      <div class="sub-title">Mama Soma ❤️</div>
+    </header>
+
+    <!-- Main Message Card -->
+    <div class="glass-card message-box">
+      <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+      <p class="warm-text">
+        إلى أغلى إنسانة في الوجود.. <span class="highlight">ماما أسماء</span> ❤️<br>
+        الصفحة دي مجرد حاجة بسيطة للتعبير عن حبي وامتناني لكل نقطة تعب ودعوة حلوة دعيتيهالي.<br>
+        شكراً إنك دايماً السند والظهر والأمان، ربنا يخليكي لينا وتفضلي منورة حياتنا بالخير والسعادة.
+      </p>
+
+      <div class="btn-group">
+        <button class="btn" onclick="triggerSurprise()">
+          <i class="fa-solid fa-heart-pulse"></i> اضغطي هنا يا أحلى ماما ✨
+        </button>
+      </div>
+    </div>
+
+    <!-- Flip Cards Section -->
+    <h3 class="section-title">
+      <i class="fa-solid fa-heart" style="color: var(--primary);"></i>
+      شكراً ليكي يا Mama Asmaa على...
+      <i class="fa-solid fa-heart" style="color: var(--primary);"></i>
+    </h3>
+    
+    <div class="cards-grid">
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>دعواتك الجميله</span>
+          </div>
+          <div class="flip-card-back">
+            دعواتك هي السبب بعد ربنا في كل خطوة نجاح وتوفيق في حياتي ❤️
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa-solid fa-utensils"></i>
+            <span>أحلى نفس في الدنيا</span>
+          </div>
+          <div class="flip-card-back">
+            أكلك ودفا إيديكي بالدنيا كلها، مفيش طعم في العالم يجي جنب أكلك 🥰
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fa-solid fa-house-chimney-heart"></i>
+            <span>أمان البيت</span>
+          </div>
+          <div class="flip-card-back">
+            وجودك في البيت هو البركة والأمان والركن الدافي اللي بنرتاح فيه دايماً ✨
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daily Prayer Box -->
+    <div class="glass-card">
+      <h3 class="section-title">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-gold);"></i>
+        دعوة من القلب لـ Mama Asmaa
+      </h3>
+      <div class="wish-box" id="wishText">
+        اضغطي على الزرار بالأسفل لتلقي دعوة مخصصة لكي اليوم 🌸
+      </div>
+      <div style="margin-top: 15px;">
+        <button class="btn btn-secondary" onclick="generateWish()">
+          <i class="fa-solid fa-rotate"></i> دعوة جديدة
+        </button>
+      </div>
+    </div>
+
+    <!-- Love Counter Section -->
+    <div class="tree-box">
+      <h3 style="color: var(--primary-dark); font-weight:800;">🌺 رسائل الحب لـ Mama Asmaa 🌺</h3>
+      <p style="color: #666; margin-top:5px;">كل ضغطة بتضيف إشارة حب وتقدير جديدة ليكي!</p>
+      <div class="love-display" id="loveDisplay">💖🌸💖</div>
+      <div style="font-weight:700; color:var(--primary-dark);" id="loveCount">عدد بطاقات المحبة: 3 بطاقات</div>
+      <button class="btn" style="margin-top:15px;" onclick="addLove()">
+        <i class="fa-solid fa-sparkles"></i> أرسل حب إضافي لـ أمي 💖
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Popup Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card">
+      <i class="fa-solid fa-heart-pulse big-heart"></i>
+      <h2>أمي الحبيبة أسماء ❤️</h2>
+      <p>
+        ربنا يديمك في حياتنا تاج فوق رؤوسنا، ويكتبلك الصحة والعافية وراحة البال دايماً يا رب.<br>
+        بنحبك جداً يا أحلى أم في الدنيا كلها! ✨🥰
+      </p>
+      <button class="btn" onclick="closeModal()">
+        بحبك يا Mama Asmaa ❤️
+      </button>
+    </div>
+  </div>
+
+  <!-- ربط ملف الـ JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
